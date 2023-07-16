@@ -14,15 +14,31 @@ const container = document.querySelector(".container"),
     moreMusicBtn = container.querySelector("#more-music"),
     closemoreMusic = container.querySelector("#close");
 icon = document.getElementById("icon")
-
+add = document.getElementById("add")
 
 
 let musicIndex = Math.floor((Math.random() * allMusic.length) + 1);
-
 window.addEventListener("load", () => {
     loadMusic(musicIndex);
     playingSong();
 })
+
+add.addEventListener("click", () => {
+    if (add.classList == "fa-solid fa-add") {
+        add.classList = "fa-solid fa-check"
+    } else {
+        add.classList = "fa-solid fa-add"
+    }
+})
+
+
+
+function addItem() {
+    add.classList = "fa-solid fa-add"
+}
+function addedItem() {
+    add.classList = "fa-solid fa-check"
+}
 
 icon.addEventListener("click", () => {
     // icon.background.style = "red"
